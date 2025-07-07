@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ticket n°5 - Oqoo</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vous avez un projet ? Nous allons le réaliser pour vous !" />
+    <meta name="keywords" content="Oqoo, Agency, Management, Talent" />
+    <meta name="author" content="Oqoo Agency" />
+    <meta name="email" content="contact@oqoo.agency" />
+    <meta name="website" content="https://www.oqoo.agency" />
+    <meta name="Version" content="v1.0" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons -->
+    <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
+    <!-- Slider -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="css/owl.theme.default.min.css"/>
+    <!-- Main Css -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" id="theme-opt" />
+    <link href="css/colors/default.css" rel="stylesheet" id="color-opt">
+    <style>
+        .row.row-broken {
+            padding-bottom: 0;
+        }
+        .col-inside-lg {
+            padding: 20px;
+        }
+        .chat {
+            height: calc(100vh - 180px);
+        }
+        .decor-default {
+            background-color: #ffffff00;
+        }
+        .chat-users h6 {
+            font-size: 20px;
+            margin: 0 0 20px;
+        }
+        .chat-users .user {
+            position: relative;
+            padding: 0 0 0 50px;
+            display: block;
+            cursor: pointer;
+            margin: 0 0 20px;
+        }
+        .chat-users .user .avatar {
+            top: 0;
+            left: 0;
+        }
+        .chat .avatar {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+        }
+        .chat .avatar img {
+            display: block;
+            border-radius: 20px;
+            height: 100%;
+        }
+        .chat .avatar .status.off {
+            border: 1px solid #5a5a5a;
+            background: #ffffff;
+        }
+        .chat .avatar .status.online {
+            background: #4caf50;
+        }
+        .chat .avatar .status.busy {
+            background: #ffc107;
+        }
+        .chat .avatar .status.offline {
+            background: #ed4e6e;
+        }
+        .chat-users .user .status {
+            bottom: 0;
+            left: 28px;
+        }
+        .chat .avatar .status {
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            position: absolute;
+        }
+        .chat-users .user .name {
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 20px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .chat-users .user .mood {
+            font: 200 14px/20px "Raleway", sans-serif;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /*****************CHAT BODY *******************/
+        .chat-body h6 {
+            font-size: 20px;
+            margin: 0 0 20px;
+        }
+        .chat-body .answer.left {
+            padding: 0 0 0 58px;
+            text-align: left;
+            float: left;
+        }
+        .chat-body .answer {
+            position: relative;
+            max-width: 600px;
+            overflow: hidden;
+            clear: both;
+        }
+        .chat-body .answer.left .avatar {
+            left: 0;
+        }
+        .chat-body .answer .avatar {
+            bottom: 36px;
+        }
+        .chat .avatar {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+        }
+        .chat .avatar img {
+            display: block;
+            border-radius: 20px;
+            height: 100%;
+        }
+        .chat-body .answer .name {
+            font-size: 14px;
+            line-height: 36px;
+        }
+        .chat-body .answer.left .avatar .status {
+            right: 4px;
+        }
+        .chat-body .answer .avatar .status {
+            bottom: 0;
+        }
+        .chat-body .answer.left .text {
+            background: #ebebeb;
+            color: #333333;
+            border-radius: 8px 8px 8px 0;
+        }
+        .chat-body .answer .text {
+            padding: 12px;
+            font-size: 16px;
+            line-height: 26px;
+            position: relative;
+        }
+        .chat-body .answer.left .text:before {
+            left: -30px;
+            border-right-color: #ebebeb;
+            border-right-width: 12px;
+        }
+        .chat-body .answer .text:before {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            border: 18px solid transparent;
+            border-bottom-width: 0;
+        }
+        .chat-body .answer.left .time {
+            padding-left: 12px;
+            color: #333333;
+        }
+        .chat-body .answer .time {
+            font-size: 16px;
+            line-height: 36px;
+            position: relative;
+            padding-bottom: 1px;
+        }
+        /*RIGHT*/
+        .chat-body .answer.right {
+            padding: 0 58px 0 0;
+            text-align: right;
+            float: right;
+        }
+
+        .chat-body .answer.right .avatar {
+            right: 0;
+        }
+        .chat-body .answer.right .avatar .status {
+            left: 4px;
+        }
+        .chat-body .answer.right .text {
+            background: #2F55D4;
+            color: #ffffff;
+            border-radius: 8px 8px 0 8px;
+        }
+        .chat-body .answer.right .text:before {
+            right: -30px;
+            border-left-color: #2F55D4;
+            border-left-width: 12px;
+        }
+        .chat-body .answer.right .time {
+            padding-right: 12px;
+            color: #333333;
+        }
+
+        /**************ADD FORM ***************/
+        .chat-body .answer-add {
+            clear: both;
+            position: relative;
+            padding: 20px;
+            background: #84A0C5;
+        }
+        .chat-body .answer-add input {
+            border: none;
+            background: none;
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            line-height: 20px;
+            padding: 0;
+            color: #ffffff;
+        }
+        .chat input {
+            -webkit-appearance: none;
+            border-radius: 0;
+        }
+        .chat-body .answer-add .answer-btn-1 {
+            /*background: url("http://91.234.35.26/iwiki-admin/v1.0.0/admin/img/icon-40.png") 50% 50% no-repeat;*/
+            right: 20px;
+        }
+        .chat-body .answer-add .answer-btn {
+            display: block;
+            cursor: pointer;
+            width: 26px;
+            height: 26px;
+            position: absolute;
+            top: 50%;
+            margin-top: -12px;
+        }
+
+        .chat input::-webkit-input-placeholder {
+            color: #fff;
+        }
+
+        .chat input:-moz-placeholder { /* Firefox 18- */
+            color: #fff;
+        }
+
+        .chat input::-moz-placeholder {  /* Firefox 19+ */
+            color: #fff;
+        }
+
+        .chat input:-ms-input-placeholder {
+            color: #fff;
+        }
+        .chat input {
+            -webkit-appearance: none;
+            border-radius: 0;
+            outline: none;
+        }
+
+        #last {
+            outline: none;
+        }
+    </style>
+    </head>
+    <body>
+        <!-- Navbar STart -->
+    <header id="topnav" class="defaultscroll sticky">
+        <div class="container">
+            <!-- Logo container-->
+            <div>
+                <a class="logo" href="/">
+                    <img src="images/logo-dark.png" class="l-dark" height="60" alt="">
+                    <img src="images/logo-light.png" class="l-light" height="60" alt="">
+                </a>
+            </div>
+            <div class="buy-button">
+                <a href="/logout" target="_blank">
+                    <div class="btn btn-primary login-btn-primary">Disconnect</div>
+                    <div class="btn btn-light login-btn-light">Disconnect</div>
+                </a>
+            </div><!--end login button-->
+            <!-- End Logo container-->
+            <div class="menu-extras">
+                <div class="menu-item">
+                    <!-- Mobile menu toggle-->
+                    <a class="navbar-toggle">
+                        <div class="lines">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </a>
+                    <!-- End mobile menu toggle-->
+                </div>
+            </div>
+
+            <div id="navigation">
+                <!-- Navigation Menu-->
+                <ul class="navigation-menu nav-light">
+                    <li><a href="/">Home</a></li>
+                    
+                        <li class="has-submenu">
+                            <a href="javascript:void(0)">Management</a><span class="menu-arrow"></span>
+                            <ul class="submenu megamenu">
+                                <li>
+                                    <ul>
+                                        <li><a href="/profile">Profil</a></li>
+                                        <li><a href="/profile">Options</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                    <li class="has-submenu parent-parent-menu-item">
+                        <a href="javascript:void(0)">Clients</a><span class="menu-arrow"></span>
+                        <ul class="submenu">
+                            <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> DarthLand </a><span class="submenu-arrow"></span>
+                                <ul class="submenu">
+                                    <li><a href="/darthland-legal" class="sub-menu-item"> Legal</a></li>
+                                </ul> 
+                            </li>
+                         </ul>
+                    </li>
+
+                    <li class="has-submenu">
+                        <a href="javascript:void(0)">About</a><span class="menu-arrow"></span>
+                        <ul class="submenu">
+                            <li><a href="/legal">CGU</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul><!--end navigation menu-->
+            </div><!--end navigation-->
+        </div><!--end container-->
+    </header><!--end header-->
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <section class="bg-profile d-table w-100 bg-primary" style="background: url('images/account/bg.png') center center;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card public-profile border-0 rounded shadow" style="z-index: 1;">
+                        <div class="card-body">
+                                                        <div class="row align-items-center">
+                                <div class="col-lg-2 col-md-3 text-md-left text-center">
+                                    <img src="https://secure.gravatar.com/avatar/1d0fb275d8621552f58387779401d0a9" class="avatar avatar-large rounded-circle shadow d-block mx-auto" alt="">
+                                </div><!--end col-->
+
+                                <div class="col-lg-10 col-md-9">
+                                    <div class="row align-items-end">
+                                        <div class="col-md-7 text-md-left text-center mt-4 mt-sm-0">
+                                            <h3 class="title mb-0">Paul Betinelli</h3>
+                                            <small class="text-muted h6 mr-2"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="31415e5d4449494949490071565c50585d1f525e5c">[email&#160;protected]</a> - </small>
+                                            <!--<ul class="list-inline mb-0 mt-3">
+                                                <li class="list-inline-item mr-2"><a href="javascript:void(0)" class="text-muted" title="Instagram"><i data-feather="instagram" class="fea icon-sm mr-2"></i>krista_joseph</a></li>
+                                                <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted" title="Linkedin"><i data-feather="linkedin" class="fea icon-sm mr-2"></i>Krista Joseph</a></li>
+                                            </ul>-->
+                                        </div><!--end col-->
+                                        <!--<div class="col-md-5 text-md-right text-center">
+                                            <ul class="list-unstyled social-icon social mb-0 mt-4">
+                                                <li class="list-inline-item"><a href="javascript:void(0)" class="rounded" data-toggle="tooltip" data-placement="bottom" title="Add Friend"><i data-feather="user-plus" class="fea icon-sm fea-social"></i></a></li>
+                                                <li class="list-inline-item"><a href="javascript:void(0)" class="rounded" data-toggle="tooltip" data-placement="bottom" title="Messages"><i data-feather="message-circle" class="fea icon-sm fea-social"></i></a></li>
+                                                <li class="list-inline-item"><a href="javascript:void(0)" class="rounded" data-toggle="tooltip" data-placement="bottom" title="Notifications"><i data-feather="bell" class="fea icon-sm fea-social"></i></a></li>
+                                                <li class="list-inline-item"><a href="account-setting.html" class="rounded" data-toggle="tooltip" data-placement="bottom" title="Settings"><i data-feather="tool" class="fea icon-sm fea-social"></i></a></li>
+                                            </ul>
+                                        </div>--><!--end col-->
+                                    </div><!--end row-->
+                                </div><!--end col-->
+                            </div><!--end row-->
+                        </div>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--ed container-->
+    </section><!--end section-->
+    <!-- Hero End -->
+                <!-- Profile Start -->
+    <section class="section mt-60">
+        <div class="container mt-lg-3">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 d-lg-block d-none">
+                    <div class="sidebar sticky-bar p-4 rounded shadow">
+                        <div class="widget">
+                            <div class="row">
+                                <div class="col-12 mt-4 pt-2">
+                                    <div class="rounded d-block shadow text-center py-3">
+                                        <span class="pro-icons h3 text-muted"><i data-feather="mail" class="fea icon-ex-md text-muted mr-3"></i></span>
+                                        <h6 class="title text-dark h6 my-0">Ticket #5</h6>
+                                        <p class="text-muted">Created on 05/06/2023 19:55:39</p>
+                                        <a href="/ticket_delete?id=5"
+                                           type="button" class="btn btn-danger "
+                                           id="ticket-button">
+                                            <i class="uil uil-comment-alt-slash"></i> Close
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6 mt-4 pt-2">
+                                    <a href="/profile" class="accounts rounded d-block shadow text-center py-3">
+                                        <span class="pro-icons h3 text-muted"><i class="uil uil-dashboard"></i></span>
+                                        <h6 class="title text-dark h6 my-0">Profil</h6>
+                                    </a>
+                                </div>
+
+                                <div class="col-6 mt-4 pt-2">
+                                    <a href="/tickets" class="accounts active rounded d-block shadow text-center py-3">
+                                        <span class="pro-icons h3 text-muted"><i class="uil uil-envelope-star"></i></span>
+                                        <h6 class="title text-dark h6 my-0">Tickets</h6>
+                                    </a>
+                                </div><!--end col-->
+
+                                <div class="col-6 mt-4 pt-2">
+                                    <a href="account-setting.html" class="accounts rounded d-block shadow text-center py-3">
+                                        <span class="pro-icons h3 text-muted"><i class="uil uil-setting"></i></span>
+                                        <h6 class="title text-dark h6 my-0">Options</h6>
+                                    </a>
+                                </div><!--end col-->
+
+                                
+                                <div class="col-6 mt-4 pt-2">
+                                    <a href="/logout" class="accounts rounded d-block shadow text-center py-3">
+                                        <span class="pro-icons h3 text-muted"><i class="uil uil-sign-out-alt"></i></span>
+                                        <h6 class="title text-dark h6 my-0">Disconnect</h6>
+                                    </a>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-8 col-12 chat" style="overflow: hidden; outline: none;" tabindex="5001" id="chat">
+                    <div class="col-inside-lg decor-default shadow">
+                        <div class="chat-body">
+                                <div class="answer right mb-4" id="last" tabindex="1">
+                                    <div id="test">
+                                    <div class="avatar">
+                                        <img src="https://secure.gravatar.com/avatar/1d0fb275d8621552f58387779401d0a9" alt="User name">
+                                    </div>
+                                    <div class="name">
+                                        Paul
+                                        Betinelli
+                                    </div>
+                                    <div class="text">Bonjour, je n&#039;ai pas très bien compris le service proposé pour la gestion de projet, pouvez-vous me l&#039;expliquer?</div>
+                                    <div class="time">05/06/2023 19:55</div>
+                                </div>
+                                <div class="answer right mb-4" id="last" tabindex="1">
+                                    <div class="avatar">
+                                        <img src="https://secure.gravatar.com/avatar/1d0fb275d8621552f58387779401d0a9" alt="User name">
+                                    </div>
+                                    <div class="name">
+                                        Paul
+                                        Betinelli
+                                    </div>
+                                    <div class="text">Bonjour, je n&#039;ai pas très bien compris le service proposé pour la gestion de projet, pouvez-vous me l&#039;expliquer?</div>
+                                    <div class="time">05/06/2023 19:55</div>
+                                </div>
+                                <div class="answer right mb-4" id="last" tabindex="1">
+                                    <div class="avatar">
+                                        <img src="https://secure.gravatar.com/avatar/1d0fb275d8621552f58387779401d0a9" alt="User name">
+                                    </div>
+                                    <div class="name">
+                                        Paul
+                                        Betinelli
+                                    </div>
+                                    <div class="text">Bonjour, je n&#039;ai pas très bien compris le service proposé pour la gestion de projet, pouvez-vous me l&#039;expliquer?</div>
+                                    <div class="time">05/06/2023 19:55</div>
+                                </div>
+                                <div class="answer right mb-4" id="last" tabindex="1">
+                                    <div class="avatar">
+                                        <img src="https://secure.gravatar.com/avatar/1d0fb275d8621552f58387779401d0a9" alt="User name">
+                                    </div>
+                                    <div class="name">
+                                        Paul
+                                        Betinelli
+                                    </div>
+                                    <div class="text">Bonjour, je n&#039;ai pas très bien compris le service proposé pour la gestion de projet, pouvez-vous me l&#039;expliquer?</div>
+                                    <div class="time">05/06/2023 19:55</div>
+                                </div>
+                                <div class="answer right mb-4" id="last" tabindex="1">
+                                    <div class="avatar">
+                                        <img src="https://secure.gravatar.com/avatar/1d0fb275d8621552f58387779401d0a9" alt="User name">
+                                    </div>
+                                    <div class="name">
+                                        Paul
+                                        Betinelli
+                                    </div>
+                                    <div class="text">Bonjour, je n&#039;ai pas très bien compris le service proposé pour la gestion de projet, pouvez-vous me l&#039;expliquer?</div>
+                                    <div class="time">05/06/2023 19:55</div>
+                                </div>
+                                <div class="answer right mb-4" id="last" tabindex="1">
+                                    <div class="avatar">
+                                        <img src="https://secure.gravatar.com/avatar/1d0fb275d8621552f58387779401d0a9" alt="User name">
+                                    </div>
+                                    <div class="name">
+                                        Paul
+                                        Betinelli
+                                    </div>
+                                    <div class="text">Bonjour, je n&#039;ai pas très bien compris le service proposé pour la gestion de projet, pouvez-vous me l&#039;expliquer?</div>
+                                    <div class="time">05/06/2023 19:55</div>
+                                </div>
+                                <div class="answer right mb-4" id="last" tabindex="1">
+                                    <div class="avatar">
+                                        <img src="https://secure.gravatar.com/avatar/1d0fb275d8621552f58387779401d0a9" alt="User name">
+                                    </div>
+                                    <div class="name">
+                                        Paul
+                                        Betinelli
+                                    </div>
+                                    <div class="text">Bonjour, je n&#039;ai pas très bien compris le service proposé pour la gestion de projet, pouvez-vous me l&#039;expliquer?</div>
+                                    <div class="time">05/06/2023 19:55</div>
+                                </div>
+                                <div class="answer right mb-4" id="last" tabindex="1">
+                                    <div class="avatar">
+                                        <img src="https://secure.gravatar.com/avatar/1d0fb275d8621552f58387779401d0a9" alt="User name">
+                                    </div>
+                                    <div class="name">
+                                        Paul
+                                        Betinelli
+                                    </div>
+                                    <div class="text">Bonjour, je n&#039;ai pas très bien compris le service proposé pour la gestion de projet, pouvez-vous me l&#039;expliquer?</div>
+                                    <div class="time">05/06/2023 19:55</div>
+                                </div>
+                                <div class="answer right mb-4" id="last" tabindex="1">
+                                    <div class="avatar">
+                                        <img src="https://secure.gravatar.com/avatar/1d0fb275d8621552f58387779401d0a9" alt="User name">
+                                    </div>
+                                    <div class="name">
+                                        Paul
+                                        Betinelli
+                                    </div>
+                                    <div class="text">Bonjour, je n&#039;ai pas très bien compris le service proposé pour la gestion de projet, pouvez-vous me l&#039;expliquer?</div>
+                                    <div class="time">05/06/2023 19:55</div>
+                                </div>
+                                <div class="answer right mb-4" id="last" tabindex="1">
+                                    <div class="avatar">
+                                        <img src="https://secure.gravatar.com/avatar/1d0fb275d8621552f58387779401d0a9" alt="User name">
+                                    </div>
+                                    <div class="name">
+                                        Paul
+                                        Betinelli
+                                    </div>
+                                    <div class="text">Bonjour, je n&#039;ai pas très bien compris le service proposé pour la gestion de projet, pouvez-vous me l&#039;expliquer?</div>
+                                    <div class="time">05/06/2023 19:55</div>
+                                </div>
+                                <div class="answer right mb-4" id="last" tabindex="1">
+                                    <div class="avatar">
+                                        <img src="https://secure.gravatar.com/avatar/1d0fb275d8621552f58387779401d0a9" alt="User name">
+                                    </div>
+                                    <div class="name">
+                                        Paul
+                                        Betinelli
+                                    </div>
+                                    <div class="text">Bonjour, je n&#039;ai pas très bien compris le service proposé pour la gestion de projet, pouvez-vous me l&#039;expliquer?</div>
+                                    <div class="time">05/06/2023 19:55</div>
+                                </div>
+                                <div class="answer right mb-4" id="last" tabindex="1">
+                                    <div class="avatar">
+                                        <img src="https://secure.gravatar.com/avatar/1d0fb275d8621552f58387779401d0a9" alt="User name">
+                                    </div>
+                                    <div class="name">
+                                        Paul
+                                        Betinelli
+                                    </div>
+                                    <div class="text">Bonjour, je n&#039;ai pas très bien compris le service proposé pour la gestion de projet, pouvez-vous me l&#039;expliquer?</div>
+                                    <div class="time">05/06/2023 19:55</div>
+                                </div>
+                                <div class="answer right mb-4" id="last" tabindex="1">
+                                    <div class="avatar">
+                                        <img src="https://secure.gravatar.com/avatar/1d0fb275d8621552f58387779401d0a9" alt="User name">
+                                    </div>
+                                    <div class="name">
+                                        Paul
+                                        Betinelli
+                                    </div>
+                                    <div class="text">Bonjour, je n&#039;ai pas très bien compris le service proposé pour la gestion de projet, pouvez-vous me l&#039;expliquer?</div>
+                                    <div class="time">05/06/2023 19:55</div>
+                                </div>
+                                </div>
+                                <div class="answer-add rounded">
+                                <input placeholder="New message" id="submitdata">
+                                <span class="answer-btn answer-btn-1" id="submit"><svg style="fill: white;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M444.52 3.52L28.74 195.42c-47.97 22.39-31.98 92.75 19.19 92.75h175.91v175.91c0 51.17 70.36 67.17 92.75 19.19l191.9-415.78c15.99-38.39-25.59-79.97-63.97-63.97z"/></svg></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end container-->
+    </section><!--end section-->
+
+        <footer class="footer footer-bar">
+        <div class="container text-center">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <div class="text-sm-left">
+                        <p class="mb-0">© 2022 Oqoo - All rights reserved. Developed by <a href="https://matthieul.dev" target="_blank" class="text-reset">Matthieu Leboeuf</a>.</p>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+    </footer><!--end footer-->
+    <!-- Footer End -->
+
+    <!-- Back to top -->
+    <a href="#" class="btn btn-icon btn-soft-primary back-to-top"><i data-feather="arrow-up" class="icons"></i></a>
+    <!-- Back to top -->
+    <!-- javascript -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrollspy.min.js"></script>
+    <!-- SLIDER -->
+    <script src="js/owl.carousel.min.js "></script>
+    <script src="js/owl.init.js "></script>
+    <!-- Icons -->
+    <script src="js/feather.min.js"></script>
+    <script src="https://unicons.iconscout.com/release/v2.1.9/script/monochrome/bundle.js"></script>
+    <!-- Main Js -->
+    <script src="js/app.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.6.8-fix/jquery.nicescroll.min.js"></script>
+    <script>
+        $(function(){
+            $(".chat").niceScroll();
+        })
+
+        function newMessage() {
+            if ('0' === '1') {
+                return false;
+            }
+            const message = $("#submitdata").val();
+            if($.trim(message) === '') {
+                return false;
+            }
+            window.location.href = 'https://www.oqoo.agency/ticket_message?id=5'+'&message='+message
+        }
+
+        $('#submit').click(function() {
+            newMessage();
+        });
+
+        $(window).on('keydown', function(e) {
+            if (e.which == 13) {
+                newMessage();
+                return false;
+            }
+        });
+
+        $("#last").focus();
+        if ('0' === '0') {
+            $("#submitdata").focus();
+        }
+    </script>
+    </body>
+</html>
